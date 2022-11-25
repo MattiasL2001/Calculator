@@ -1,7 +1,11 @@
-﻿List<string> history = new List<string>();
+﻿//list to store all mathematical operations in
+List<string> history = new List<string>();
+//made a separate method for the main functionality of the calculator, not a necessity but
+//it makes the code readable, especially as the name of the method tells what its purpose is
 ChooseOperation();
 void ChooseOperation()
 {
+    //this creates a starting-menu, the first and last line with the dashes is just for visual purposes
     Console.WriteLine("------------------------------------------------------------------------------");
     Console.WriteLine("Choose a mathematical operation below:");
     Console.WriteLine("+");
@@ -27,6 +31,13 @@ void ChooseOperation()
         case '/':
             float num1 = Calculate.InputNums();
             float num2 = Calculate.InputNums();
+            //passing num 1 and num 2 but also 'o', which is the type of operation into the method,
+            //this allows to make a similar structure in the given method with switch cases, like this one
+            //this is ´not necessary but helps to keep the project readable and understandable with
+            //small method that all have their own easy-to-understand purpose and thus makes it easier for
+            //a perosn to read and understand
+            //for a small project like this I could have just have coded everything here in this switch case,
+            //as projects this small of a size still would make it readable
             string answer = (Calculate.CalculateNums(num1, num2, o));
             Console.WriteLine(answer);
             history.Add($"{num1} {o} {num2} = {answer}");
@@ -49,6 +60,8 @@ void ChooseOperation()
     }
 }
 
+//Separate class to handle different kind of calculations, not necessary for a small
+//project like this but it helps with the entire structure/readability
 class Calculate
 {
     //This is the method that handles the users input of numbers to the mathematical operation
@@ -93,6 +106,8 @@ class Calculate
             default:
                 break;
         }
+        //returns 'invalid' if none of the circumstances above will occur, to give the user some extra feedback
+        //not necessary in order for the calculator to function but users allways appreciate good feedback
         return "invalid";
     }
 }
