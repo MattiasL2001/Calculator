@@ -58,7 +58,7 @@
                 }
             }
 
-            dynamic GetNumber()
+            decimal GetNumber()
             {
                 while (true)
                 {

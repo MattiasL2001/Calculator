@@ -6,7 +6,7 @@ namespace CalculatorTesting
     {
         public CalculatorTests()
         {
-            Calculator.Calculator calculator = new Calculator.Calculator();
+            //Calculator.Calculator calculator = new Calculator.Calculator();
         }
 
         [TestMethod]

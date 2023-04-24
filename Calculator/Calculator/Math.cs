@@ -2,7 +2,7 @@
 {
     public class Math
     {
-        public static dynamic Calculate(decimal a, decimal b, char operation)
+        public static object Calculate(decimal a, decimal b, char operation)
         {
             switch (operation)
             {
@@ -32,7 +32,7 @@
         {
             return a * b;
         }
-        public static dynamic Division(decimal a, decimal b)
+        public static object Division(decimal a, decimal b)
         {
             if (b != 0)
             {
